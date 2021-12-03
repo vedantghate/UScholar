@@ -1,14 +1,327 @@
-<div style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
-    <iframe width="40%" height="800" frameborder="0" style="margin: 2rem;"
-        src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+choiceOfView%2Cviewof+searchUniversities%2Cviewof+selectedUniversity%2Cviewof+test%2Cviewof+choiceOfGradLevel%2CethnicityRatioTitle%2CethnicityPieChart">
-    </iframe>
-    <iframe width="40%" height="800" frameborder="0" style="margin: 2rem;"
-        src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+choiceOfView%2Cviewof+searchUniversities%2Cviewof+selectedUniversity%2Cviewof+test%2Cviewof+choiceOfGradLevel%2CethnicityRatioTitle%2CethnicityPieChart">
-    </iframe>
-    <iframe width="40%" height="800" frameborder="0" style="margin: 2rem;"
-        src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+choiceOfView%2Cviewof+searchUniversities%2Cviewof+selectedUniversity%2Cviewof+test%2Cviewof+choiceOfGradLevel%2CethnicityRatioTitle%2CethnicityPieChart">
-    </iframe>
-    <iframe width="40%" height="800" frameborder="0" style="margin: 2rem;"
-        src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+choiceOfView%2Cviewof+searchUniversities%2Cviewof+selectedUniversity%2Cviewof+test%2Cviewof+choiceOfGradLevel%2CethnicityRatioTitle%2CethnicityPieChart">
-    </iframe>
+<div style="background: url(../../assets/usa.jpg)" class="jumbotron bg-cover text-white">
+    <div class="container py-5 text-center text">
+        <h1 class="display-4 font-weight-bold"><span class="us">UScholar</span></h1>
+        <p class="font-italic mb-0 subtitle">Visual Info-graphics on Universities in the United States</p>
+    </div>
+</div>
+
+<div class="cards">
+    <div *ngIf="!ethnicityPieInfo" class="card" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : ethnicityPieFlip}">
+        <div class="titlediv"><h4>Student's Ethnicity Ratio</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('ethnicityPie')">info</mat-icon></div>
+        <div>
+            <iframe width="100%" height="820" frameborder="0"
+                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=ethnicityPieChart%2Cviewof+choiceOfView%2Cviewof+searchUniversities%2Cviewof+selectedUniversity%2Cviewof+test%2Cviewof+choiceOfGradLevel%2CethnicityRatioTitle%2CethnicityRatioLegend">
+            </iframe>
+        </div>
+    </div>
+    <div *ngIf="ethnicityPieInfo" class="card back" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : !ethnicityPieFlip}">
+        <h3>About</h3>
+        <p>
+            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
+        </p>
+        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('ethnicityPie')">cancel</mat-icon></p>
+    </div>
+
+    <!-- =============================================================== -->
+
+    <div *ngIf="!genderPieInfo" class="card" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : genderPieFlip}">
+        <div class="titlediv"><h4>Student's Gender Ratio</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('genderPie')">info</mat-icon></div>
+        <div>
+            <iframe width="100%" height="820" frameborder="0"
+                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+choiceOfAdmission%2CgenderRatioTitle%2CgenderChart%2Cviewof+choiceOfView%2Cviewof+searchUniversities%2Cviewof+selectedUniversity%2Cviewof+test">
+            </iframe>
+        </div>
+    </div>
+    <div *ngIf="genderPieInfo" class="card back" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : !genderPieFlip}">
+        <h3>About</h3>
+        <p>
+            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+        </p>
+        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('genderPie')">cancel</mat-icon></p>
+    </div>
+
+    <!-- =============================================================== -->
+
+    <div *ngIf="!gradEthnicityBarInfo" class="card" style="width: 50%; height: 37rem;" [ngClass]="{'flip' : gradEthnicityBarFlip}">
+        <div class="titlediv"><h4>Graduation Rate by Ethincity</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('gradEthnicityBar')">info</mat-icon></div>
+        <div>
+            <iframe width="100%" height="530" frameborder="0"
+                 src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+GREthnicityName%2CgraduationRateEthnicityChart">
+            </iframe>
+        </div>
+    </div>
+    <div *ngIf="gradEthnicityBarInfo" class="card back" style="width: 50%; height: 37rem;" [ngClass]="{'flip' : !gradEthnicityBarFlip}">
+        <h3>About</h3>
+        <p>
+            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+        </p>
+        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('gradEthnicityBar')">cancel</mat-icon></p>
+    </div>
+
+    <!-- =============================================================== -->
+
+    <div *ngIf="!gradGenderBarInfo" class="card" style="width: 50%; height: 37rem;" [ngClass]="{'flip' : gradGenderBarFlip}">
+        <div class="titlediv"><h4>Graduation Rate by Gender</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('gradGenderBar')">info</mat-icon></div>
+        <div>
+            <iframe width="100%" height="530" frameborder="0"
+                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+MandWName%2CgraduationRateGenderChart">
+            </iframe>
+        </div>
+    </div>
+    <div *ngIf="gradGenderBarInfo" class="card back" style="width: 50%; height: 37rem;" [ngClass]="{'flip' : !gradGenderBarFlip}">
+        <h3>About</h3>
+        <p>
+            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+        </p>
+        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('gradGenderBar')">cancel</mat-icon></p>
+    </div>
+
+    <!-- ========================== CAROUSELS ===================================== -->
+
+    <div style="width: 70rem;">
+        <mdb-carousel [animation]="'slide'" [interval]=0>
+            <mdb-carousel-item>
+                    <div *ngIf="!livingExpensesInfo" class="card" style="width: 70rem; height: 57rem;" [ngClass]="{'flip' : livingExpensesFlip}">
+                        <div class="titlediv"><h4>Living Expenses</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('livingExpenses')">info</mat-icon></div>
+                        <div>
+                            <iframe width="100%" height="850" frameborder="0"
+                                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+choiceOfLiving%2Clivingexpensesubtitle%2Clivingexpenseslegend%2ClivingExpensesChart">>
+                            </iframe>
+                        </div>
+                    </div>
+                    <div *ngIf="livingExpensesInfo" class="card back" style="width: 70rem; height: 57rem;" [ngClass]="{'flip' : !livingExpensesFlip}">
+                        <h3>About</h3>
+                        <p>
+                            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
+                        </p>
+                        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('livingExpenses')">cancel</mat-icon></p>
+                    </div>
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+                    <div *ngIf="!applicantsMapInfo" class="card" style="width: 70rem; height: 57rem;" [ngClass]="{'flip' : applicantsMapFlip}">
+                        <div class="titlediv"><h4>Application Density</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('applicantsMap')">info</mat-icon></div>
+                        <div>
+                            <iframe width="100%" height="850" frameborder="0"
+                                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=applicantsChart%2Cviewof+typeSelect">                        
+                            </iframe>
+                        </div>
+                    </div>
+                    <div *ngIf="applicantsMapInfo" class="card back" style="width: 70rem; height: 57rem;" [ngClass]="{'flip' : !applicantsMapFlip}">
+                        <h3>About</h3>
+                        <p>
+                            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
+                        </p>
+                        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('applicantsMap')">cancel</mat-icon></p>
+                    </div>
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+                <div *ngIf="!degreesMapInfo" class="card" style="width: 70rem; height: 57rem;" [ngClass]="{'flip' : degreesMapFlip}">
+                    <div class="titlediv"><h4>Distribution of Degrees Offered</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('degreesMap')">info</mat-icon></div>
+                    <div>
+                        <iframe width="100%" height="850" frameborder="0"
+                        src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=degreeOfferedChart%2Cviewof+degreeOffered">                        
+                        </iframe>
+                    </div>
+                </div>
+                <div *ngIf="degreesMapInfo" class="card back" style="width: 70rem; height: 57rem;" [ngClass]="{'flip' : !degreesMapFlip}">
+                    <h3>About</h3>
+                    <p>
+                        Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
+                    </p>
+                    <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('degreesMap')">cancel</mat-icon></p>
+                </div>
+        </mdb-carousel-item>
+        </mdb-carousel>
+    </div>
+
+    <!-- ======================== FEES CAROUSELS =================================== -->
+
+    <div style="width: 70rem;">
+        <mdb-carousel [animation]="'slide'" [interval]=0>
+            <mdb-carousel-item>
+                    <div *ngIf="!tuitionLineInfo" class="card" style="width: 70rem; height: 45rem;" [ngClass]="{'flip' : tuitionLineFlip}">
+                        <div class="titlediv"><h4>Tuition Fee Trend</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('tuitionLine')">info</mat-icon></div>
+                        <div>
+                            <iframe width="100%" height="850" frameborder="0"
+                                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+Name%2Cviewof+feeType%2CtuitionFeeChart">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div *ngIf="tuitionLineInfo" class="card back" style="width: 70rem; height: 45rem;" [ngClass]="{'flip' : !tuitionLineFlip}">
+                        <h3>About</h3>
+                        <p>
+                            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
+                        </p>
+                        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('tuitionLine')">cancel</mat-icon></p>
+                    </div>
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+                    <div *ngIf="!gradLineInfo" class="card" style="width: 70rem; height: 45rem;" [ngClass]="{'flip' : gradLineFlip}">
+                        <div class="titlediv"><h4>Graduation Rate</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('gradLine')">info</mat-icon></div>
+                        <div>
+                            <iframe width="100%" height="850" frameborder="0"
+                                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+GradRateName%2CgraduationRateChart">                            
+                            </iframe>
+                        </div>
+                    </div>
+                    <div *ngIf="gradLineInfo" class="card back" style="width: 70rem; height: 45rem;" [ngClass]="{'flip' : !gradLineFlip}">
+                        <h3>About</h3>
+                        <p>
+                            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
+                        </p>
+                        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('gradLine')">cancel</mat-icon></p>
+                    </div>
+            </mdb-carousel-item>
+        </mdb-carousel>
+    </div>
+
+    <!-- ========================================================================== -->
+
+    <div *ngIf="!degreesBarInfo" class="card" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : degreesBarFlip}">
+        <div class="titlediv"><h4>Degrees Conferred</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('degreesBar')">info</mat-icon></div>
+        <div>
+            <iframe width="100%" height="820" frameborder="0"
+                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+universityList%2Cviewof+choiceData%2CdegreesChart%2CdegreesLegend">
+            </iframe>
+        </div>
+    </div>
+    <div *ngIf="degreesBarInfo" class="card back" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : !degreesBarFlip}">
+        <h3>About</h3>
+        <p>
+            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
+        </p>
+        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('degreesBar')">cancel</mat-icon></p>
+    </div>
+
+    <!-- =============================================================== -->
+
+    <div *ngIf="!admissionsBarInfo" class="card" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : admissionsBarFlip}">
+        <div class="titlediv"><h4>University Rankings</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('admissionsBar')">info</mat-icon></div>
+        <div>
+            <iframe width="100%" height="820" frameborder="0"
+                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+info%2Cviewof+lowerLimit2%2Cviewof+upperLimit2%2CadmissionsLegend%2CadmissionsChart">            
+            </iframe>
+        </div>
+    </div>
+    <div *ngIf="admissionsBarInfo" class="card back" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : !admissionsBarFlip}">
+        <h3>About</h3>
+        <p>
+            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+        </p>
+        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('admissionsBar')">cancel</mat-icon></p>
+    </div>
+
+    <!-- =============================================================== -->
+
+    <div *ngIf="!grantAmountBarInfo" class="card" style="width: 50%; height: 37rem;" [ngClass]="{'flip' : grantAmountBarFlip}">
+        <div class="titlediv"><h4>Institutions ranked by total Grants Recieved</h4> 
+            <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('grantAmountBar')">info</mat-icon></div>
+        <div>
+            <iframe width="100%" height="540" frameborder="0"
+                src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=grantAmountTwoChart%2CgrantAmountTwoLegend">            
+            </iframe>
+        </div>
+    </div>
+    <div *ngIf="grantAmountBarInfo" class="card back" style="width: 50%; height: 37rem;" [ngClass]="{'flip' : !grantAmountBarFlip}">
+        <h3>About</h3>
+        <p>
+            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+        </p>
+        <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('grantAmountBar')">cancel</mat-icon></p>
+    </div>
+
+    <!-- =============================================================== -->
+
+    <div style="width: 50%; display: flex;">
+        <div *ngIf="!satrInfo" class="card" style="width: 40%; height: 37rem;" [ngClass]="{'flip' : satrFlip}">
+            <div class="titlediv"><h4>SAT Reading Percentiles</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('satr')">info</mat-icon></div>
+            <div>
+                <iframe width="100%" height="540" frameborder="0"
+                    src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+satUniDdl%2CsatReadingChart">            
+                </iframe>
+            </div>
+        </div>
+        <div *ngIf="satrInfo" class="card back" style="width: 40%; height: 37rem;" [ngClass]="{'flip' : !satrFlip}">
+            <h3>About</h3>
+            <p>
+                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+            </p>
+            <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('satr')">cancel</mat-icon></p>
+        </div>
+    
+        <!-- =============================================================== -->
+    
+        <div *ngIf="!satmInfo" class="card" style="width: 40%; height: 37rem;" [ngClass]="{'flip' : satmFlip}">
+            <div class="titlediv"><h4>SAT Math Percentiles</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('satm')">info</mat-icon></div>
+            <div>
+                <iframe width="100%" height="540" frameborder="0"
+                    src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=satMathChart%2Cviewof+satUniDdl">            
+                </iframe>
+            </div>
+        </div>
+        <div *ngIf="satmInfo" class="card back" style="width: 40%; height: 37rem;" [ngClass]="{'flip' : !satmFlip}">
+            <h3>About</h3>
+            <p>
+                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+            </p>
+            <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('satm')">cancel</mat-icon></p>
+        </div>
+    </div>
+
+    <!-- =============================================================== -->
+
+    <div style="width: 75%; display: flex; justify-content: center;">
+        <div *ngIf="!actcInfo" class="card" style="width: 25%; height: 37rem;" [ngClass]="{'flip' : actcFlip}">
+            <div class="titlediv"><h4>ACT Composite Percentiles</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('actc')">info</mat-icon></div>
+            <div>
+                <iframe width="100%" height="540" frameborder="0"
+                    src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=viewof+satUniDdl%2CactCompositeChart">            
+                </iframe>
+            </div>
+        </div>
+        <div *ngIf="actcInfo" class="card back" style="width: 25%; height: 37rem;" [ngClass]="{'flip' : !actcFlip}">
+            <h3>About</h3>
+            <p>
+                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+            </p>
+            <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('actc')">cancel</mat-icon></p>
+        </div>
+    
+        <!-- =============================== -->
+    
+        <div *ngIf="!acteInfo" class="card" style="width: 25%; height: 37rem;" [ngClass]="{'flip' : acteFlip}">
+            <div class="titlediv"><h4>ACT English Percentiles</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('acte')">info</mat-icon></div>
+            <div>
+                <iframe width="100%" height="540" frameborder="0"
+                    src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=actEnglishChart%2Cviewof+satUniDdl">            
+                </iframe>
+            </div>
+        </div>
+        <div *ngIf="acteInfo" class="card back" style="width: 25%; height: 37rem;" [ngClass]="{'flip' : !acteFlip}">
+            <h3>About</h3>
+            <p>
+                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+            </p>
+            <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('acte')">cancel</mat-icon></p>
+        </div>
+
+        <!-- =============================== -->
+    
+        <div *ngIf="!actmInfo" class="card" style="width: 25%; height: 37rem;" [ngClass]="{'flip' : actmFlip}">
+            <div class="titlediv"><h4>ACT Math Percentiles</h4> <mat-icon matTooltip="Info" matTooltipClass="primary-tooltip" (click)="flipit('actm')">info</mat-icon></div>
+            <div>
+                <iframe width="100%" height="540" frameborder="0"
+                    src="https://observablehq.com/embed/@ghatevedant/uscholar?cells=actMathsCharts%2Cviewof+satUniDdl">            
+                </iframe>
+            </div>
+        </div>
+        <div *ngIf="actmInfo" class="card back" style="width: 25%; height: 37rem;" [ngClass]="{'flip' : !actmFlip}">
+            <h3>About</h3>
+            <p>
+                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
+            </p>
+            <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('actm')">cancel</mat-icon></p>
+        </div>
+    </div>
+
 </div>
