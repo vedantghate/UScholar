@@ -17,8 +17,14 @@
     <div *ngIf="ethnicityPieInfo" class="card back" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : !ethnicityPieFlip}">
         <h3>About</h3>
         <p>
-            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
-        </p>
+            This Pie Chart Indicates Percent-wise distribution of students based on their Ethnicity. When ‘overall ‘option is selected, we can visualize nation-wide student ratios whereas when ‘University Specific’ option is selected, the user can select a particular university of interest from a dropdown box below to view the student ratios specific to the selected university.
+            Information Includes:</p>
+            <ul>
+                <li>Overall distribution</li>
+                 <li>Undergrad level distribution </li>
+                 <li>Grad level distribution </li>
+            </ul>   
+        
         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('ethnicityPie')">cancel</mat-icon></p>
     </div>
 
@@ -35,8 +41,15 @@
     <div *ngIf="genderPieInfo" class="card back" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : !genderPieFlip}">
         <h3>About</h3>
         <p>
-            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-        </p>
+            This Pie Chart Indicates Percent-wise distribution of students based on their Gender. When ‘overall ‘option is selected, we can visualize nation-wide gender ratios whereas when ‘University Specific’ option is selected, the user can select a particular university of interest from a dropdown box below to view the gender ratios specific to the selected university. 
+            Information Includes:         </p>
+            <ul>
+                <li>Number of Applicants </li>
+
+                <li>Number of admissions</li> 
+            
+                <li>Number of Enrollments</li> 
+            </ul>
         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('genderPie')">cancel</mat-icon></p>
     </div>
 
@@ -53,8 +66,12 @@
     <div *ngIf="gradEthnicityBarInfo" class="card back" style="width: 50%; height: 37rem;" [ngClass]="{'flip' : !gradEthnicityBarFlip}">
         <h3>About</h3>
         <p>
-            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-        </p>
+            This Bar chart indicates graduation rate of the students based on their ethnicity. The user can choose a university of interest to visualize the graduation rate of students belonging to different ethnicities. 
+
+            Information Includes:         </p>
+            <ul>
+                <li>Ethnicity specific graduation rate</li>
+            </ul>
         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('gradEthnicityBar')">cancel</mat-icon></p>
     </div>
 
@@ -71,8 +88,12 @@
     <div *ngIf="gradGenderBarInfo" class="card back" style="width: 50%; height: 37rem;" [ngClass]="{'flip' : !gradGenderBarFlip}">
         <h3>About</h3>
         <p>
-            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-        </p>
+            This Bar chart indicates graduation rate of the students based on their gender. The user can choose a university of interest to visualize gender wise graduation rate of students. 
+
+            Information Includes:         </p>
+            <ul>
+                <li>Gender specific graduation rate</li>
+            </ul>
         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('gradGenderBar')">cancel</mat-icon></p>
     </div>
 
@@ -92,8 +113,14 @@
                     <div *ngIf="livingExpensesInfo" class="card back" style="width: 70rem; height: 57rem;" [ngClass]="{'flip' : !livingExpensesFlip}">
                         <h3>About</h3>
                         <p>
-                            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
-                        </p>
+                            This Choropleth Map provides information about state wise living expenses based on the type of the students seeking for admission. The user can choose the type of living as in district, in state, out of district, out of state along with in campus or out of campus to know the cost of living of a state in US dollars.  
+
+                            Upon choosing the “Type of living “, the user can hover on different states to visualize the living expenses. 
+                         
+                         Information Includes:                         </p>
+                         <ul>
+                             <li>State wise living expenses in US dollars</li>
+                         </ul>
                         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('livingExpenses')">cancel</mat-icon></p>
                     </div>
             </mdb-carousel-item>
@@ -109,8 +136,12 @@
                     <div *ngIf="applicantsMapInfo" class="card back" style="width: 70rem; height: 57rem;" [ngClass]="{'flip' : !applicantsMapFlip}">
                         <h3>About</h3>
                         <p>
-                            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
-                        </p>
+                            This Bubble Map indicates gender wise application density for the universities of different states. The size of the bubbles is directly proportional to the application density for the universities. 
+
+                            Information Includes:                         </p>
+                            <ul>
+                                <li>Gender specific Applications</li>
+                            </ul>
                         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('applicantsMap')">cancel</mat-icon></p>
                     </div>
             </mdb-carousel-item>
@@ -126,8 +157,12 @@
                 <div *ngIf="degreesMapInfo" class="card back" style="width: 70rem; height: 57rem;" [ngClass]="{'flip' : !degreesMapFlip}">
                     <h3>About</h3>
                     <p>
-                        Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
-                    </p>
+                        This Bubble Map provides information about various degrees offered by the universities across the country. The User can choose the type of the degree from the drop-down list and visualize types of degrees offered by the universities in different states 
+
+                        Information Includes:                     </p>
+                        <ul>
+                            <li>Type of Degrees offered</li>
+                        </ul>
                     <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('degreesMap')">cancel</mat-icon></p>
                 </div>
         </mdb-carousel-item>
@@ -150,8 +185,16 @@
                     <div *ngIf="tuitionLineInfo" class="card back" style="width: 70rem; height: 45rem;" [ngClass]="{'flip' : !tuitionLineFlip}">
                         <h3>About</h3>
                         <p>
-                            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
-                        </p>
+                            This Line Chart provides information on university specific tuition fee trends over the last 4 years based on the type of student’s living. The User can select the university from the dropdown list and select student type to visualize the fee trends.  
+
+                            Information Includes:                         </p>
+                            <ul>
+                                <li>In- District fee in US dollars </li>
+
+                                <li>In-State fee in US dollars</li>
+                                
+                                <li>Out-of-State fee in US dollars</li>
+                            </ul>
                         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('tuitionLine')">cancel</mat-icon></p>
                     </div>
             </mdb-carousel-item>
@@ -167,8 +210,12 @@
                     <div *ngIf="gradLineInfo" class="card back" style="width: 70rem; height: 45rem;" [ngClass]="{'flip' : !gradLineFlip}">
                         <h3>About</h3>
                         <p>
-                            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
-                        </p>
+                            This Line chart provides information on university specific graduation rate for 4, 5, 6 years. The user can select the university from the dropdown list to visualize the graduation rate. 
+
+                            Information Includes:                         </p>
+                            <ul>
+                                <li>Graduation Rate for 4, 5 and 6 years</li>
+                            </ul>
                         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('gradLine')">cancel</mat-icon></p>
                     </div>
             </mdb-carousel-item>
@@ -188,8 +235,13 @@
     <div *ngIf="degreesBarInfo" class="card back" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : !degreesBarFlip}">
         <h3>About</h3>
         <p>
-            Percent-wise distribution of students belonging to an ethnicity. When ‘overall’ option is selected, it provides nation-wide ethincity ratios. With ‘University Specific’ option, user can select a university from a dropdown to view ethincity ratios specific to the selected university. 
-        </p>
+            This Bar provides information about the number of types of degrees conferred by the universities. The User can select the university of interest from the drop-down list and chose Degrees Awarded or Degrees Received to visualize the data. The degrees have been color coded for a better readability.  
+
+            Information includes:         </p>
+            <ul>
+                <li>Number of degrees Awarded</li>
+                <li>Number of degrees received</li>
+            </ul>
         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('degreesBar')">cancel</mat-icon></p>
     </div>
 
@@ -206,8 +258,16 @@
     <div *ngIf="admissionsBarInfo" class="card back" style="width: 50%; height: 57rem;" [ngClass]="{'flip' : !admissionsBarFlip}">
         <h3>About</h3>
         <p>
-            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-        </p>
+            This stacked Bar chart provides information on university specific Gender wise number of Admissions, gender wise number of Applicants and gender wise number of Enrollments and sorts the information by the University Ranks. 
+
+            The user can choose the option of interest and specify the lower and upper limit of rankings of the Universities in the text box below to Visualize the information of the Universities based on their ranking.  
+            
+            Information Includes:        </p>
+            <ul>
+                <li>Gender wise number of applicants</li>
+                <li>Gender wise number of admissions</li>
+                <li>Gender wise number of enrollments</li>
+            </ul>
         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('admissionsBar')">cancel</mat-icon></p>
     </div>
 
@@ -225,8 +285,13 @@
     <div *ngIf="grantAmountBarInfo" class="card back" style="width: 50%; height: 37rem;" [ngClass]="{'flip' : !grantAmountBarFlip}">
         <h3>About</h3>
         <p>
-            Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-        </p>
+            This stacked Bar chart provides information about universities ranked by their total Grants received. It includes the top 10 institutes receiving various grants such as:    </p>
+            <ul>
+                <li>Federal Grants</li>
+                <li>State and Local Grants</li>
+                <li>Institutional Grants</li>
+                <li>Pell Grants</li>
+            </ul>
         <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('grantAmountBar')">cancel</mat-icon></p>
     </div>
 
@@ -244,8 +309,7 @@
         <div *ngIf="satrInfo" class="card back" style="width: 40%; height: 37rem;" [ngClass]="{'flip' : !satrFlip}">
             <h3>About</h3>
             <p>
-                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-            </p>
+                This Bar chart provides information about university specific SAT Reading percentiles.            </p>
             <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('satr')">cancel</mat-icon></p>
         </div>
     
@@ -262,8 +326,7 @@
         <div *ngIf="satmInfo" class="card back" style="width: 40%; height: 37rem;" [ngClass]="{'flip' : !satmFlip}">
             <h3>About</h3>
             <p>
-                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-            </p>
+                This Bar chart provides information about university specific SAT Math percentiles.            </p>
             <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('satm')">cancel</mat-icon></p>
         </div>
     </div>
@@ -282,8 +345,7 @@
         <div *ngIf="actcInfo" class="card back" style="width: 25%; height: 37rem;" [ngClass]="{'flip' : !actcFlip}">
             <h3>About</h3>
             <p>
-                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-            </p>
+                This Bar chart provides information about university specific ACT Composite percentiles.            </p>
             <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('actc')">cancel</mat-icon></p>
         </div>
     
@@ -300,8 +362,7 @@
         <div *ngIf="acteInfo" class="card back" style="width: 25%; height: 37rem;" [ngClass]="{'flip' : !acteFlip}">
             <h3>About</h3>
             <p>
-                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-            </p>
+                This Bar chart provides information about university specific ACT English percentiles.            </p>
             <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('acte')">cancel</mat-icon></p>
         </div>
 
@@ -318,8 +379,7 @@
         <div *ngIf="actmInfo" class="card back" style="width: 25%; height: 37rem;" [ngClass]="{'flip' : !actmFlip}">
             <h3>About</h3>
             <p>
-                Percent-wise distribution of students belonging to a gender. When ‘overall’ option is selected, it provides nation-wide gender ratios. With ‘University Specific’ option, user can select a university from a dropdown to view gender ratios specific to the selected university. 
-            </p>
+                This Bar chart provides information about university specific ACT Math percentiles.            </p>
             <p class="backcross"><mat-icon matTooltip="Back to chart" matTooltipClass="primary-tooltip" (click)="flipit('actm')">cancel</mat-icon></p>
         </div>
     </div>
